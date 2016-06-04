@@ -16,7 +16,7 @@
         /* Wayland access */
         "--socket=wayland",
         /* Need write access to installed apps */
-        "--filesystem=~/.local/share/xdg-app",
+        "--filesystem=~/.local/share/flatpak",
         /* Needs to talk to the network: */
         "--share=network",
         /* Notification access */
@@ -70,7 +70,7 @@
             ]
         },
         {
-            /* README: needed for xdg-app and fuse */
+            /* README: needed for flatpak and fuse */
             "name": "libfuse",
             "cleanup": [ "/bin" ],
             "sources": [
@@ -82,9 +82,9 @@
             ]
         },
         {
-            /* README: needed for xdg-app */
+            /* README: needed for flatpak */
             "name": "ostree",
-            "config-opts": ["--disable-man", "--without-libmount"],
+            "config-opts": ["--disable-man"],
             "cleanup": [ "/bin", "/etc/grub.d", "/libexec" ],
             "sources": [
                 {
@@ -94,7 +94,7 @@
             ]
         },
         {
-            "name": "xdg-app",
+            "name": "flatpak",
             "config-opts": ["--disable-documentation", "--disable-seccomp",
                             "--disable-sandboxed-triggers"],
             "make-args": [ "XDG_APP_BINDIR=/usr/bin" ],
@@ -112,7 +112,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://anongit.freedesktop.org/xdg-app/xdg-app"
+                    "url": "git://github.com/flatpak/flatpak"
                 }
             ]
         },
