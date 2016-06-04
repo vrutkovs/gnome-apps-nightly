@@ -14,7 +14,7 @@
         /* Needs to talk to the network: */
         "--share=network",
         /* Tracker access */
-        "--talk-name=org.freedesktop.Tracker1"
+        "--talk-name=org.freedesktop.Tracker1",
         /* Needed for dconf to work (unfortunately needs homedir read access) */
         "--filesystem=home:ro", "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
