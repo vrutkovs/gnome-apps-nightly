@@ -92,11 +92,23 @@
         },
         {
             "name": "webkitgtk3",
+            "build-options" : {
+                "arch" : {
+		    /* Following tricks to build on aarch64 from webkitgtk3.spec */
+                    "aarch64" : {
+			"cflags": "-DENABLE_YARR_JIT=0 -fno-delete-null-pointer-checks",
+			"cxxflags": "-DENABLE_YARR_JIT=0 -fno-delete-null-pointer-checks",
+                        "config-opts" : [
+                            "--disable-jit"
+                        ]
+                    }
+                }
+            },
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://webkitgtk.org/releases/webkitgtk-2.4.9.tar.xz",
-                    "sha256": "afdf29e7828816cad0be2604cf19421e96d96bf493987328ffc8813bb20ac564"
+                    "url": "http://webkitgtk.org/releases/webkitgtk-2.4.11.tar.xz",
+                    "sha256": "588aea051bfbacced27fdfe0335a957dca839ebe36aa548df39c7bbafdb65bf7"
                 }
             ]
         },
