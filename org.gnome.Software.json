@@ -95,8 +95,10 @@
         },
         {
             "name": "flatpak",
-            "config-opts": ["--disable-documentation", "--disable-seccomp",
-                            "--disable-sandboxed-triggers"],
+            "config-opts": ["--disable-documentation",
+                            "--disable-seccomp",
+                            "--disable-sandboxed-triggers",
+                            "--disable-system-helper"],
             "make-args": [ "XDG_APP_BINDIR=/usr/bin" ],
             "cleanup": [ "/etc/profile.d",
                          "/libexec",
