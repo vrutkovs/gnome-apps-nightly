@@ -43,6 +43,7 @@
         },
         {
             "name": "gtksourceview",
+            "config-opts": ["--disable-Werror" ],
             "sources": [
                 {
                     "type": "git",
